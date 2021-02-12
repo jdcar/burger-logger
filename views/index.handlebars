@@ -3,21 +3,41 @@
 Create a button in index.handlebars that will submit the user input into the database. --}}
 
 {{!-- Add the Burger image --}}
+{{!-- <ul>
+  {{#each object}}
+  <li>{{"burger_name"}}</li>
+  {{/each}}
+</ul> --}}
 <h1>Eat-Da-Burger!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      One of three columns
 
+    </div>
+    <div class="col-sm-6">
+      One of three columns
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1"></label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+
+    <p>Enter a burger you want to eat; Click the "Submit" button</p>
+
+
+  </div>
+</div>
 
 {{!-- if devoured is false
 render burger name to the left
 if devoured is true
 render burger name to the left --}}
-<ul>
-{{#each object}}
-  <li>{{"burger_name"}}</li>
-{{/each}}
-</ul>
+
 {{!-- Burger name not eaten | Devour it button | Burgers eaten --}}
 
-{{!-- Text box  --}}
-
-<button>Click me</button>
-<p>Enter a burger you want to eat; Click the "Submit" button</p>
+{{!-- Text box --}}

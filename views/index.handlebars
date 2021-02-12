@@ -1,14 +1,23 @@
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto.
 
 Create a button in index.handlebars that will submit the user input into the database. --}}
-<h2>Hello, World!!</h2>
+
+{{!-- Add the Burger image --}}
+<h1>Eat-Da-Burger!</h1>
 
 
-
+{{!-- if devoured is false
+render burger name to the left
+if devoured is true
+render burger name to the left --}}
 <ul>
 {{#each object}}
   <li>{{"burger_name"}}</li>
 {{/each}}
 </ul>
+{{!-- Burger name not eaten | Devour it button | Burgers eaten --}}
+
+{{!-- Text box  --}}
 
 <button>Click me</button>
+<p>Enter a burger you want to eat; Click the "Submit" button</p>

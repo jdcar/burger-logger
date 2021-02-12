@@ -1,1 +1,1 @@
-# burger-logger
+# Burger Logger

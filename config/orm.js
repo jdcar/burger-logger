@@ -6,9 +6,10 @@ const connection = require("./connection.js")
 
 
 const orm = {
-    selectAll: function (tableName) {
+    selectAll: function (tableName, cb) {
         connection.query('SELECT * FROM ??', tableName,function(err, data) {
             if (err) throw err
+            cb(data)
             console.log(data)
         })
     },
@@ -22,7 +23,7 @@ const orm = {
         var sql = `UPDATE burgers SET devoured= ? WHERE burger_name = "?"`
         connection.query(sql, [devoured, burger_name], function (err, result) {
             if (err) throw err;
-            console.log(result.affectedRows + " record(s) updated");
+            // console.log(result.affectedRows + " record(s) updated");
         });
 
     }

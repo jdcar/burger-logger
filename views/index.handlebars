@@ -1,6 +1,14 @@
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto.
 
 Create a button in index.handlebars that will submit the user input into the database. --}}
+<h2>Hello, World!!</h2>
 
-<p>{{burger}}</p>
+
+
+<ul>
+{{#each object}}
+  <li>{{"burger_name"}}</li>
+{{/each}}
+</ul>
+
 <button>Click me</button>

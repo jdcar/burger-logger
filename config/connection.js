@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 });
 connection.connect(err => {
     if (err) throw err
-    console.log(`MySQL connected on ${connection.threadId}`)
+    // console.log(`MySQL connected on ${connection.threadId}`)
 });
 
 module.exports = connection

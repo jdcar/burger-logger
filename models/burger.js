@@ -15,7 +15,7 @@ var burger = {
         })
     },
     updateOne: function(cb) {
-        orm.insertOne("devoured", "burger_name", function (res) {
+        orm.updateOne(cb, function (res) {
             cb(res)
         })
     }

@@ -32,7 +32,7 @@
             console.log(newBurger)
 
             // Send the POST request.
-           // { { !--Left off at creating post request-- } }
+            // { { !--Left off at creating post request-- } }
             $.ajax("/api/burgers", {
                 type: "POST",
                 data: newBurger
@@ -40,12 +40,36 @@
                 function () {
                     console.log("created new burger, " + newBurger);
                     //         // Reload the page to get the updated list
-                    
+
                 }
-                
+
             );
             location.reload();
         });
+
+        $('.devour').click(function (event) {
+
+            console.log(this.id)
+            const id = this.id
+            console.log("Devour")
+            var newDevour = {
+                devoured: 1,
+                id: id
+            }
+            //Get id of clicked devour button
+            //insert into url
+
+            $.ajax(`/api/burgers/${id}`, {
+                type: "PUT",
+                data: {newDevour}
+            }).then(function () {
+                    console.log("Edited, " + newDevour);
+                    //         // Reload the page to get the updated list
+                }
+
+            );
+            location.reload();
+        })
 
     </script>
 </body>

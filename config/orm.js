@@ -19,9 +19,9 @@ const orm = {
             console.table(data)
         })
     },
-    updateOne: function (devoured, burger_name) {
-        var sql = `UPDATE burgers SET devoured= ? WHERE burger_name = "?"`
-        connection.query(sql, [devoured, burger_name], function (err, result) {
+    updateOne: function (id) {
+        var sql = `UPDATE burgers SET devoured= 1 WHERE id = ?`
+        connection.query(sql, [id], function (err, result) {
             if (err) throw err;
             // console.log(result.affectedRows + " record(s) updated");
         });

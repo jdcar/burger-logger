@@ -13,8 +13,8 @@ const orm = {
             console.log(data)
         })
     },
-    insertOne: function (burger_name, devoured) {
-        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?, ?);`, [burger_name, devoured], (err, data) => {
+    insertOne: function (burger_name) {
+        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?, false);`, [burger_name], (err, data) => {
             if (err) throw err
             console.table(data)
         })

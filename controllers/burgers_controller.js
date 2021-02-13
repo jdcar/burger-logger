@@ -26,17 +26,19 @@ router.get("/", function (req, res) {
 
 router.post("/api/burgers", function (req, res) {
     console.log(req.body.burger_name)
-    console.log(req.body.burger_name)
+    // console.log(req.body.burger_name)
 
-    // var burger_name = req.body.burger_name
+    var burger_name = req.body.burger_name
     // var devoured = req.body.devoured
-    // burger.insertOne(burger_name, devoured),function (result) {
-    // burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
+    burger.insertOne(burger_name),function (result) {
+    burger.insertOne([burger_name], [req.body.burger_name], function (result) {
 
 
-        // console.log(result)
-    // })
+        console.log(result)
+    })
+    }
 })
+
 // burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
 
 

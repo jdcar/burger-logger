@@ -3,6 +3,12 @@ body {
     text-align: center;
 }
 
+h1 {
+    font-family: 'Truculenta', sans-serif;
+    font-size: 60px;
+    
+}
+
 .form-control {
     width: 50%;
     display: block;

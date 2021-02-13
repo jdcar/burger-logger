@@ -8,23 +8,27 @@ Create a button in index.handlebars that will submit the user input into the dat
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
+      {{!-- If devoured is false --}}
       <ul class="list-group">
-
         {{#each object}}
+        {{#unless devoured}}
         <button type="button" class="btn btn-secondary" style="float: right;">Devour it!</button>
         <li class="list-group-item">{{"id"}}. {{"burger_name"}}</li>
-
+        {{/unless}}
         {{/each}}
       </ul>
     </div>
     <div class="col-sm-6">
+      {{!-- If devoured is true --}}
+
+
       <ul class="list-group">
-
         {{#each object}}
+        {{#if devoured}}
+        <li class="list-group-item" style="float: right;">{{"id"}}. {{"burger_name"}}
 
-        <li class="list-group-item">{{"burger_name"}}
         </li>
-
+        {{/if}}
         {{/each}}
       </ul>
     </div>

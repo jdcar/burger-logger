@@ -26,17 +26,20 @@
             // Make sure to preventDefault on a submit event.
             event.preventDefault();
             console.log("Clicked")
-            var newBurger = $("#formTextArea").val().trim();
+            var newBurger = {
+                burger_name: $("#formTextArea").val().trim(),
+                devoured: 0
+            }
             console.log(newBurger)
 
             // Send the POST request.
-            {{!-- Left off at creating post request --}}
+           // { { !--Left off at creating post request-- } }
             $.ajax("/api/burgers", {
                 type: "POST",
                 data: newBurger
             }).then(
                 function () {
-                    console.log("created new burger");
+                    console.log("created new burger, " + newBurger);
                     //         // Reload the page to get the updated list
                     location.reload();
                 }

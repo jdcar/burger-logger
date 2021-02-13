@@ -25,10 +25,20 @@ router.get("/", function (req, res) {
 })
 
 router.post("/api/burgers", function (req, res) {
-    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
-        res.json({ id: result.insertId });
-    })
+    console.log(req.body.burger_name)
+    console.log(req.body.burger_name)
+
+    // var burger_name = req.body.burger_name
+    // var devoured = req.body.devoured
+    // burger.insertOne(burger_name, devoured),function (result) {
+    // burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
+
+
+        // console.log(result)
+    // })
 })
+// burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function (result) {
+
 
 // router.post("/api/cats", function (req, res) {
 //     cat.create(["name", "sleepy"], [req.body.name, req.body.sleepy], function (result) {

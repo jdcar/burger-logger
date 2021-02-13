@@ -12,16 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@100&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/burger_style.css" />
-
     {{!--
     <script src="./models/burger.js"></script> --}}
+    {{!--
+    <script src="./../assets/js/index.js"></script> --}}
 </head>
 
 <body>
 
     {{{ body }}}
     <script>
-        console.log("Hello, world")
+        $("#submit").click(function (event) {
+            // Make sure to preventDefault on a submit event.
+            event.preventDefault();
+            console.log("Clicked")
+            var newBurger = $("#formTextArea").val().trim();
+            console.log(newBurger)
+
+            // Send the POST request.
+            {{!-- Left off at creating post request --}}
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(
+                function () {
+                    console.log("created new burger");
+                    //         // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
+
     </script>
 </body>
 

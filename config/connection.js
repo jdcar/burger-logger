@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL) {
         database: 'eivafy114l2758wf'
     })
 }
-}
+
 
 // var connection = mysql.createConnection({
 //     host: 'localhost',

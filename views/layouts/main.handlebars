@@ -12,10 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@100&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/burger_style.css" />
-    {{!--
-    <script src="./models/burger.js"></script> --}}
-    {{!--
-    <script src="./../assets/js/index.js"></script> --}}
+
 </head>
 
 <body>
@@ -29,17 +26,15 @@
             var newBurger = {
                 burger_name: $("#formTextArea").val().trim()
             }
-            console.log(newBurger)
+            //console.log(newBurger)
 
-            // Send the POST request.
-            // { { !--Left off at creating post request-- } }
             $.ajax("/api/burgers", {
                 type: "POST",
                 data: newBurger
             }).then(
                 function () {
                     console.log("created new burger, " + newBurger);
-                    //         // Reload the page to get the updated list
+
 
                 }
 
@@ -56,21 +51,29 @@
                 devoured: 1,
                 id: id
             }
-            //Get id of clicked devour button
-            //insert into url
-
+    
             $.ajax(`/api/burgers/${id}`, {
                 type: "PUT",
-                data: {newDevour}
+                data: { newDevour }
             }).then(function () {
-                    console.log("Edited, " + newDevour);
-                    //         // Reload the page to get the updated list
-                }
-
+                console.log("Edited, " + newDevour);
+            }
             );
             location.reload();
         })
 
+        $('.delete').click(function (event) {
+
+            var id = this.id
+
+            $.ajax(`/api/burgers/${id}`, {
+                type: "DELETE",
+                data: { id }
+            }).then(function () {
+                console.log("Deleted, " + id);
+            });
+            location.reload();
+        })
     </script>
 </body>
 

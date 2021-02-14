@@ -12,22 +12,21 @@ Create a button in index.handlebars that will submit the user input into the dat
       <ul class="list-group">
         {{#each object}}
         {{#unless devoured}}
-        <button class="devour" id={{"id"}} type="button" class="btn btn-secondary" style="float: right;">Devour it!</button>
+        <button class="devour" id={{"id"}} type="button" class="btn btn-secondary" style="float: right;">Devour
+          it!</button>
         <li class="list-group-item">{{"id"}}. {{"burger_name"}}</li>
         {{/unless}}
         {{/each}}
       </ul>
     </div>
     <div class="col-sm-6">
-      {{!-- If devoured is true --}}
-
-
+     
       <ul class="list-group">
         {{#each object}}
         {{#if devoured}}
-        <li class="list-group-item" style="float: right;">{{"id"}}. {{"burger_name"}}
+        <button class="delete" id={{"id"}} type="button" class="btn btn-secondary" style="float: right;">Delete</button>
 
-        </li>
+        <li class="list-group-item">{{"id"}}. {{"burger_name"}}</li>
         {{/if}}
         {{/each}}
       </ul>
@@ -40,22 +39,11 @@ Create a button in index.handlebars that will submit the user input into the dat
       <textarea class="form-control" id="formTextArea" rows="3"></textarea>
     </div>
     <input id="submit" class="btn btn-primary" type="submit" value="Submit">
-<br>
-<br>
-
-
+    <br>
+    <br>
 
     <p>Enter a burger you want to eat; Click the "Submit" button</p>
 
 
   </div>
 </div>
-
-{{!-- if devoured is false
-render burger name to the left
-if devoured is true
-render burger name to the left --}}
-
-{{!-- Burger name not eaten | Devour it button | Burgers eaten --}}
-
-{{!-- Text box --}}

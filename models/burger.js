@@ -18,13 +18,12 @@ var burger = {
         orm.updateOne(cb, function (res) {
             cb(res)
         })
+    },
+    deleteOne: function(cb) {
+        orm.deleteOne(cb, function (res) {
+            cb(res)
+        })
     }
-
-
-// orm.selectAll("burgers")
-// orm.insertOne("burger_name", "devoured")
-// orm.updateOne("devoured", "burger_name")
 }
-// Export at the end of the burger.js file.
 
 module.exports = burger
